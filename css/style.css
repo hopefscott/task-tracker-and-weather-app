@@ -1,0 +1,1360 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* #41b3a3, #85dcba */
+body {
+  background: -webkit-gradient(linear, left top, right bottom, from(#41b3a3), to(#41b3a3));
+  background: linear-gradient(to bottom right, #41b3a3, #41b3a3);
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aesth-shape1 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: purple;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 25%;
+  -webkit-box-shadow: 0rem 0rem 5rem 5rem purple;
+          box-shadow: 0rem 0rem 5rem 5rem purple;
+}
+
+.aesth-shape2 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: green;
+  border-radius: 50%;
+  bottom: 30%;
+  right: 25%;
+  -webkit-box-shadow: 0rem 0rem 10rem 10rem green;
+          box-shadow: 0rem 0rem 10rem 10rem green;
+}
+
+.aesth-shape3 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: #b4354a;
+  border-radius: 50%;
+  bottom: 50%;
+  right: 50%;
+  -webkit-box-shadow: 0rem 0rem 10rem 10rem #b4354a;
+          box-shadow: 0rem 0rem 10rem 10rem #b4354a;
+}
+
+.profile-edit-alert {
+  position: absolute;
+  top: 1rem;
+  width: 40%;
+  background: #fff;
+  margin: auto;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  z-index: 3;
+  color: #b83612;
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  -webkit-transition: -webkit-transform 1s ease-in;
+  transition: -webkit-transform 1s ease-in;
+  transition: transform 1s ease-in;
+  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
+}
+
+.open-pe-alert {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+/* background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.25)
+    ); */
+.container {
+  width: 70%;
+  height: 80vh;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.25)));
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.25));
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  border-radius: 2rem;
+  display: none;
+  font-size: 1.5rem;
+}
+
+.container aside {
+  width: 25%;
+  position: relative;
+  padding: 2rem;
+}
+
+.container main {
+  width: 75%;
+  height: 100%;
+  padding: 2rem;
+}
+
+.auth-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(119, 118, 118, 0.7);
+  z-index: 10;
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.4rem;
+}
+
+.auth-container .auth-loader {
+  padding: 0;
+  width: 0;
+  height: 0.3rem;
+  position: inherit;
+  top: -0;
+  left: 0;
+  background: #b83612;
+  -webkit-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out;
+}
+
+.auth-container .form-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  margin: 2rem 0;
+}
+
+.auth-container .form-switch p {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.auth-container .form-switch .switched {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.auth-container .reg-form {
+  width: 40%;
+}
+
+.auth-container .login-form {
+  display: none;
+  width: 40%;
+}
+
+.auth-container .form-title {
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.auth-container .msg-alert {
+  background: white;
+  width: 60%;
+  padding: 0.5rem;
+  display: none;
+  opacity: 0;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  line-height: 1.3rem;
+  font-size: 1.2rem;
+}
+
+.auth-container .my-form {
+  width: 60%;
+  margin-top: 2rem;
+}
+
+.auth-container .my-form .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
+}
+
+.auth-container .my-form .form-control input {
+  background: transparent;
+  border: none;
+  border-bottom: 0.2rem solid #333;
+  padding: 0.25rem;
+}
+
+.auth-container .my-form .form-control input:focus {
+  outline: none;
+}
+
+.auth-container .my-form button {
+  margin-top: 2rem;
+  background: #014042;
+  color: #fff;
+  border: 0.2rem solid #014042;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.auth-container .my-form button:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+          box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+}
+
+aside .profile-card {
+  position: relative;
+  background: #41b3a3;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+aside .profile-card .profile-edit-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: #fff;
+  z-index: 5;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 0.2rem solid #014042;
+  border-radius: 1rem;
+}
+
+aside .profile-card .profile-edit-container i#pe-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #b83612;
+  cursor: pointer;
+}
+
+aside .profile-card .profile-edit-container .edit-photo {
+  position: relative;
+  margin-top: 1rem;
+}
+
+aside .profile-card .profile-edit-container .edit-photo p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #014042;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+aside .profile-card .profile-edit-container .edit-photo img {
+  border: 0.3rem solid #014042;
+}
+
+aside .profile-card .profile-edit-container .edit-user-details {
+  margin-top: 1rem;
+}
+
+aside .profile-card .profile-edit-container .edit-user-details input {
+  border: none;
+  border-bottom: 0.2rem solid #014042;
+  margin: 0.5rem 2rem;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #014042;
+}
+
+aside .profile-card .profile-edit-container .edit-user-details input:focus {
+  outline: none;
+}
+
+aside .profile-card .profile-edit-container .edit-user-details button {
+  margin: 1rem 2rem;
+  background: transparent;
+  color: #014042;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  border: 0.2rem solid #014042;
+  cursor: pointer;
+}
+
+aside .profile-card .open-profile-edit {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+aside .profile-card #profile-options {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+aside .profile-card #profile-options:hover i {
+  color: #014042;
+}
+
+aside .profile-card .profile-options-container {
+  position: absolute;
+  background: #fff;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 50%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+aside .profile-card .profile-options-container i {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #b83612;
+  cursor: pointer;
+}
+
+aside .profile-card .profile-options-container .profile-menu {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+aside .profile-card .profile-options-container .profile-menu li {
+  display: block;
+  color: #014042;
+  cursor: pointer;
+}
+
+aside .profile-card .open-profile-options {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+aside .profile-card .profile-pic {
+  border-radius: 50%;
+  border: 0.2rem solid #fff;
+  width: 8rem;
+  margin-top: 2rem;
+}
+
+aside .profile-card .user-name {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+aside .profile-card .job-title {
+  text-align: left;
+  margin: 0.5rem;
+  font-size: 0.6rem;
+  line-height: 1rem;
+}
+
+aside .profile-card .user-handle {
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+aside .profile-card .social-links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 50%;
+  margin: 2rem;
+}
+
+aside .profile-card .social-links a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  margin: 0.25rem 1rem;
+  color: #fff;
+}
+
+aside .profile-card .social-links a:hover {
+  color: #b83612;
+}
+
+aside .reminders {
+  display: none;
+}
+
+.weather-container {
+  width: 100%;
+  position: relative;
+  height: 50%;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.weather-container .weather-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 5rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: url("../img/rainy-weather.webp");
+  background-size: cover;
+  background-position-y: 35rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 0 10rem 1rem #014042 inset;
+          box-shadow: 0 0 10rem 1rem #014042 inset;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.weather-container .weather-info .temp-location span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.7rem;
+}
+
+.weather-container .weather-info .temp-location .now-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather-container .weather-info .temp-location .now-icon .temp {
+  font-size: 4rem;
+  margin-left: 1rem;
+}
+
+.weather-container .weather-info .temp-location .weather-summary {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.weather-container .weather-info .temp-location .location-city {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.weather-container .weather-info .temp-location .location-country {
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+}
+
+.weather-container .weather-info .temp-location .location-time {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.weather-container .weather-info .humidity-sunrise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 0.4rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .title {
+  font-size: 1.1rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .value {
+  font-size: 1.3rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity,
+.weather-container .weather-info .humidity-sunrise .sunrise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: 2rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity img,
+.weather-container .weather-info .humidity-sunrise .sunrise img {
+  width: 4rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity .how-humid,
+.weather-container .weather-info .humidity-sunrise .humidity .what-time,
+.weather-container .weather-info .humidity-sunrise .sunrise .how-humid,
+.weather-container .weather-info .humidity-sunrise .sunrise .what-time {
+  margin-left: 1rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.weather-container:hover .weather-info,
+.weather-container:focus .weather-info {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.todo-container {
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
+}
+
+.todo-container .todo-form {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  -webkit-box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
+          box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
+  width: 40%;
+}
+
+.todo-container .todo-form .todo-form-title {
+  margin-bottom: 0.5rem;
+  color: #29796e;
+}
+
+.todo-container .todo-form .msg-alert {
+  background: white;
+  width: 100%;
+  padding: 0.5rem;
+  display: none;
+  opacity: 0;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  line-height: 1.3rem;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.todo-container .todo-form .todo-form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.todo-container .todo-form .todo-form-control input {
+  padding-left: 0.5rem;
+  border: none;
+  border-bottom: 0.2rem solid #41b3a3;
+  font-size: 1.2rem;
+  background: transparent;
+  color: #29796e;
+}
+
+.todo-container .todo-form .todo-form-control input:focus {
+  outline: none;
+}
+
+.todo-container .todo-form button {
+  background: #29796e;
+  color: #fff;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 50vw;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.todo-container .todo-form button:hover {
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+          box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+}
+
+.todo-container .all-tasks {
+  background: #014042;
+  border-radius: 2rem;
+  margin-left: 2rem;
+  padding: 1.5rem 2rem;
+  width: 60%;
+  overflow: hidden;
+}
+
+.todo-container .all-tasks .all-tasks-title {
+  color: #e3e3e3;
+  letter-spacing: 0.1rem;
+}
+
+.todo-container .all-tasks .all-tasks-list {
+  margin: 2rem 0;
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-item .task-status {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  color: #b83612;
+  cursor: pointer;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-item .task-status-complete i {
+  color: green;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-fadeout {
+  -webkit-animation: todoFadeout 0.5s ease-out forwards;
+          animation: todoFadeout 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes todoFadeout {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    display: -webkit-box;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+}
+
+@keyframes todoFadeout {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
+  .profile-edit-alert {
+    width: 90%;
+    border: 0.2rem solid #b83612;
+  }
+  .auth-container {
+    padding: 4rem;
+  }
+  .auth-container .form-switch,
+  .auth-container .reg-form,
+  .auth-container .login-form,
+  .auth-container .msg-alert,
+  .auth-container .my-form,
+  .auth-container button {
+    width: 100%;
+  }
+  .auth-container .my-form {
+    margin-top: 3rem;
+  }
+  .auth-container .my-form .form-control {
+    margin: 1.5rem 0;
+  }
+  .auth-container .my-form .form-control input {
+    color: #014042;
+  }
+  .auth-container .my-form button {
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  .container {
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(65, 179, 163, 0.25)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(65, 179, 163, 0.25));
+  }
+  .container aside {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+  .container aside .profile-card {
+    border-radius: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container {
+    height: 100%;
+    border: none;
+    border-radius: 0rem;
+    padding: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container i#pe-close {
+    font-size: 2.5rem;
+    top: 2rem;
+    right: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details {
+    padding: 0 2rem;
+    margin: 0;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details input {
+    width: 100%;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details button {
+    margin: 0;
+    width: 50%;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  .container aside .profile-card #profile-options {
+    right: 2rem;
+    font-size: 3rem;
+  }
+  .container aside .profile-card .profile-options-container {
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    padding: 2rem;
+    height: 80%;
+  }
+  .container aside .profile-card .profile-options-container i {
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu {
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu li {
+    margin: 0.5rem 0;
+  }
+  .container aside .profile-card .profile-pic {
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    width: 10rem;
+    margin-top: 0;
+  }
+  .container aside .profile-card .user-name {
+    font-size: 2rem;
+  }
+  .container aside .profile-card .job-title {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+  .container aside .profile-card .user-handle {
+    font-size: 1.4rem;
+  }
+  .container aside .profile-card .social-links {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .container aside .profile-card .social-links a {
+    font-size: 2.3rem;
+  }
+  .container aside .profile-card .social-links a:hover {
+    color: #b83612;
+  }
+  .container main {
+    width: 100%;
+    position: absolute;
+    top: 28rem;
+  }
+  .container main .weather-container {
+    height: 40%;
+    border-radius: 1rem;
+  }
+  .container main .weather-container .weather-info {
+    padding: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-position-y: unset;
+    border-radius: 0.5rem;
+    height: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container main .weather-container .weather-info .temp-location {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets {
+    line-height: 1.7rem;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets .location-country {
+    margin: 0.5rem 0;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon .temp {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .temp-location .weather-summary {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise .humidity,
+  .container main .weather-container .weather-info .humidity-sunrise .sunrise {
+    margin: 0;
+  }
+  .container main .todo-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .container main .todo-container .todo-form {
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    width: 100%;
+  }
+  .container main .todo-container .todo-form .todo-form-title {
+    font-size: 1.8rem;
+  }
+  .container main .todo-container .todo-form .msg-alert {
+    font-size: 1.3rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control input {
+    font-size: 1.4rem;
+  }
+  .container main .todo-container .todo-form button {
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    border-radius: 50vw;
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .all-tasks {
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+  .container main .todo-container .all-tasks .all-tasks-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 767px) {
+  body {
+    height: auto;
+  }
+  .auth-container {
+    width: 100%;
+    padding: 4rem;
+  }
+  .auth-container .reg-form,
+  .auth-container .form-switch,
+  .auth-container .login-form,
+  .auth-container .msg-alert {
+    width: 70%;
+  }
+  .auth-container .my-form {
+    margin-top: 3rem;
+    width: 100%;
+  }
+  .auth-container .my-form .form-control {
+    margin: 1.5rem 0;
+  }
+  .auth-container .my-form .form-control input {
+    color: #014042;
+  }
+  .auth-container .my-form button {
+    width: 50%;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  .container {
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(65, 179, 163, 0.25)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(65, 179, 163, 0.25));
+  }
+  .container aside {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+  .container aside .profile-card {
+    border-radius: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 4rem;
+  }
+  .container aside .profile-card .profile-edit-container {
+    height: 100%;
+    border: none;
+    border-radius: 0rem;
+    padding: 3rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .container aside .profile-card .profile-edit-container i#pe-close {
+    font-size: 3rem;
+    top: 4rem;
+    right: 4rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-photo {
+    margin: 1rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details {
+    padding: 0 2rem;
+    margin: 0;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details input {
+    width: 80%;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details button {
+    margin: 0;
+    width: 50%;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+  }
+  .container aside .profile-card #profile-options {
+    right: 4rem;
+    font-size: 4rem;
+  }
+  .container aside .profile-card .profile-options-container {
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    padding: 2rem;
+    height: 80%;
+    width: 30%;
+  }
+  .container aside .profile-card .profile-options-container i {
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu {
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu li {
+    margin: 0.5rem 0;
+  }
+  .container aside .profile-card .profile-pic {
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    width: 12rem;
+    margin-top: 0;
+  }
+  .container aside .profile-card .user-name {
+    font-size: 2rem;
+  }
+  .container aside .profile-card .job-title {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+  .container aside .profile-card .user-handle {
+    font-size: 1.4rem;
+  }
+  .container aside .profile-card .social-links {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .container aside .profile-card .social-links a {
+    font-size: 2.3rem;
+  }
+  .container main {
+    width: 100%;
+    position: absolute;
+    top: 35rem;
+  }
+  .container main .weather-container {
+    height: 40%;
+    border-radius: 1rem;
+  }
+  .container main .weather-container .weather-info {
+    padding: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-position-y: unset;
+    border-radius: 0.5rem;
+    height: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container main .weather-container .weather-info .temp-location {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.5rem;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets {
+    line-height: 1.7rem;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets .location-country {
+    margin: 0.5rem 0;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets .location-time {
+    color: #000;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon .temp {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .temp-location .weather-summary {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise .humidity,
+  .container main .weather-container .weather-info .humidity-sunrise .sunrise {
+    margin: 0;
+  }
+  .container main .todo-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    margin-top: 2rem;
+  }
+  .container main .todo-container .todo-form {
+    border-radius: 1rem;
+    padding: 3rem;
+    width: 100%;
+  }
+  .container main .todo-container .todo-form .todo-form-title {
+    font-size: 1.8rem;
+  }
+  .container main .todo-container .todo-form .msg-alert {
+    font-size: 1.3rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control input {
+    font-size: 1.4rem;
+  }
+  .container main .todo-container .todo-form button {
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    border-radius: 50vw;
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .all-tasks {
+    margin: 2rem 0;
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+  .container main .todo-container .all-tasks .all-tasks-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .auth-container {
+    width: 100%;
+    padding: 4rem;
+  }
+  .auth-container .reg-form,
+  .auth-container .form-switch,
+  .auth-container .login-form,
+  .auth-container .msg-alert {
+    width: 50%;
+  }
+  .auth-container .my-form {
+    margin-top: 3rem;
+    width: 80%;
+  }
+  .auth-container .my-form .form-control {
+    margin: 1.5rem 0;
+  }
+  .auth-container .my-form .form-control input {
+    color: #014042;
+  }
+  .auth-container .my-form button {
+    width: 50%;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  .container {
+    width: 90%;
+    height: 90vh;
+    position: relative;
+    border-radius: 1.5rem;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.25)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.25));
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*# sourceMappingURL=style.css.map */

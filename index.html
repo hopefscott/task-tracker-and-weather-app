@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo List App with Authentication and Weather Updates</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+            integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="aesth-shape1"></div>
+        <div class="aesth-shape2"></div>
+        <div class="aesth-shape3"></div>
+        <p class="profile-edit-alert">
+            Profile details have been updated and you are now being logged out.
+            <br />
+            Please login with your new details.
+        </p>
+        <div class="auth-container">
+            <div class="auth-loader"></div>
+            <div class="form-switch">
+                <p class="reg-switch switched">Register</p>
+                <p class="login-switch">Login</p>
+            </div>
+            <div class="reg-form">
+                <h2 class="form-title">
+                    Hello,<br />
+                    Let's get you started!
+                </h2>
+                <span class="msg-alert"></span>
+                <form method="post" action="" class="my-form">
+                    <div class="form-control">
+                        <label for="reg-fullname">What's your name?</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="reg-fullname"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    <div class="form-control">
+                        <label for="reg-email">What's your email?</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="reg-email"
+                            required
+                        />
+                    </div>
+                    <div class="form-control">
+                        <label for="job">Your fancy job title.</label>
+                        <input type="text" name="job" id="job" required />
+                    </div>
+                    <div class="form-control">
+                        <label for="location">Which city are you from?</label>
+                        <input type="text" name="job" id="location" required />
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="login-form">
+                <h2 class="form-title">
+                    Hello,<br />
+                    Welcome back!
+                </h2>
+                <span class="msg-alert"></span>
+                <form method="post" action="" class="my-form">
+                    <div class="form-control">
+                        <label for="login-fullname">Your name?</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="login-fullname"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    <div class="form-control">
+                        <label for="login-email">Email?</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="login-email"
+                            required
+                        />
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <aside>
+                <div class="profile-card">
+                    <div class="profile-edit-container">
+                        <i class="bi bi-x-lg" id="pe-close"></i>
+                        <div class="edit-photo">
+                            <img
+                                class="profile-pic"
+                                src="https://via.placeholder.com/100"
+                                alt="Profile Picture"
+                            />
+                            <p><i class="bi bi-camera"></i></p>
+                        </div>
+                        <form action="" class="edit-user-details">
+                            <input type="text" name="newName" id="new-name" />
+                            <input type="text" name="newJob" id="new-job" />
+                            <button type="submit" id="pe-submit">Update</button>
+                        </form>
+                    </div>
+                    <div id="profile-options">
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                    <div class="profile-options-container">
+                        <i class="bi bi-x-lg"></i>
+                        <ul class="profile-menu">
+                            <li id="pe-open">Edit Profile</li>
+                            <li id="app-logout">Logout</li>
+                        </ul>
+                    </div>
+                    <img
+                        class="profile-pic"
+                        src="https://via.placeholder.com/100"
+                        alt="Profile Picture"
+                    />
+                    <h4 class="user-name"></h4>
+                    <p class="job-title"></p>
+                    <a href="#" class="user-handle"></a>
+                    <ul class="social-links">
+                        <li>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reminders">
+                    <h3 class="reminders-title">
+                        Upcoming Tasks &nbsp; <i class="bi bi-alarm-fill"></i>
+                    </h3>
+                    <ul></ul>
+                </div>
+            </aside>
+            <main>
+                <section class="weather-container">
+                    <div class="weather-info">
+                        <div class="temp-location">
+                            <div class="weather-deets">
+                                <span class="now-icon"
+                                    ><img alt="" />
+                                    <strong class="temp"></strong
+                                ></span>
+                                <span class="weather-summary"></span>
+                            </div>
+                            <div class="location-deets">
+                                <span class="location-city"></span>
+                                <span class="location-country"></span>
+                                <span class="location-time"></span>
+                            </div>
+                        </div>
+                        <div class="humidity-sunrise">
+                            <div class="humidity">
+                                <img src="./img/haze-white.png" alt="" />
+                                <div class="how-humid">
+                                    <p class="title">Humidity</p>
+                                    <p class="value"></p>
+                                </div>
+                            </div>
+                            <div class="sunrise">
+                                <img src="./img/sunrise-white.png" alt="" />
+                                <div class="what-time">
+                                    <p class="title">Sunrise</p>
+                                    <p class="value"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="todo-container">
+                    <form action="" method="post" class="todo-form">
+                        <h4 class="todo-form-title">
+                            What are you up to today?
+                        </h4>
+                        <span class="msg-alert"></span>
+                        <div class="todo-form-control">
+                            <label for="todo">Task</label>
+                            <input
+                                type="text"
+                                name="todo"
+                                id="new-todo"
+                                required
+                                autofocus
+                            />
+                        </div>
+                        <div class="todo-form-control">
+                            <label for="todo-desc"
+                                >Description (optional)</label
+                            >
+                            <input type="text" name="desc" id="new-todo-desc" />
+                        </div>
+                        <button type="submit">
+                            Submit &nbsp;<i class="bi bi-arrow-right"></i>
+                        </button>
+                    </form>
+                    <div class="all-tasks">
+                        <h4 class="all-tasks-title">
+                            Here is a list of all your tasks.
+                        </h4>
+                        <ul class="all-tasks-list"></ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
